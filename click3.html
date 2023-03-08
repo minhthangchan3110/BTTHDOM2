@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="srcollDemo">
+      <p>JS scroll</p>
+    </div>
+    <div id="control">
+      <button id="btnLeft">Left</button>
+      <button id="btnTop">Top</button>
+    </div>
+  </body>
+  <script>
+    let control = document.querySelector("#control");
+
+    control.addEventListener("click", function (e) {
+      let div = document.getElementById("srcollDemo");
+      let target = e.target;
+      switch (target.id) {
+        case "btnLeft":
+          div.scrollLeft += 20;
+          break;
+
+        case "btnTop":
+          div.scrollTop += 20;
+          break;
+      }
+    });
+  </script>
+</html>
+<style>
+  #srcollDemo {
+    height: 200px;
+    width: 200px;
+    overflow: auto;
+    background-color: #f0db4f;
+  }
+  #srcollDemo p {
+    height: 300px;
+    width: 300px;
+  }
+</style>
